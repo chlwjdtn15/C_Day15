@@ -15,11 +15,22 @@ int get_index_of_str(char* a, char* b) {
     for( int j =0; *(b + j) != '\0'; j++) {
       
       
-      while (*(a + i) == *(b + j)) {
+      if (*(a + i) == *(b + j)) {
         
         
         index = i;
 
+
+        if (*(b + j + 1) != '\0')
+        {
+          if(*(a + i + 1) == *(b + j + 1)){
+
+            index = i;
+          }
+          else {
+            index = -1;
+          }
+        }
 
       }
 
